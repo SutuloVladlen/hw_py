@@ -13,4 +13,4 @@ while degree_of_2 <= number:
     if degree_of_2 > number:
         break
     list_degree_of_2.append(degree_of_2)
-print(*list_degree_of_2)
+print(*list_degree_of_2) # можно как то сделать принт (f"текст {*list_degree_of_2}") при такой записи не работает код

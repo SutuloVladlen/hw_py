@@ -15,7 +15,7 @@ while number1 <= number2 or number1 == number2 + 1:
     print(number1 , number2)
     if number1 * number2 == produkt_of_numbers:
         print(f"искомые числа {number2}, {number1} ")
-        break
+        break # на лекции говорили что лучше пользоваться принудительной остановкой , но я не смог найти способ остановки цикла
     else:
         
         number1 += 1
