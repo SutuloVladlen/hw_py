@@ -452,5 +452,8 @@ $RECYCLE.BIN/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+<<<<<<< HEAD
 ## Python
 .hw/*
+=======
+>>>>>>> homework2
