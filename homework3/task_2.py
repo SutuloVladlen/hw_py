@@ -12,13 +12,12 @@ leng = int (input("Введите длинну списка"))
 number1 =  int (input("Введите число которое мы будем искать"))
 number2 = number1
 listt = []
-sett = set()
 caunt = 0
-for i in range(leng):
-    listt.append(randint(0,100))
+listt = [randint(0,10) for i in range(leng)]
+# for i in range(leng):
+#     listt.append(randint(0,10))
 print(listt)# можно как-то не циклом, а какойто встроенной командой заполнить список рандомными числами
-for i in listt:
-    sett.add(i)
+sett =set(listt) 
 print(sett)
 flag = True
 while flag:
