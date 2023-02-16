@@ -12,6 +12,5 @@ def sum_number(a,b):
         a,b=b,a
     if b!=0:
         return sum_number(a+1,b-1)
-    else:
-        return a
+    return a
 print(sum_number(int(input("Введите первое число")),int(input("Введите второе число"))))

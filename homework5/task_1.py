@@ -10,8 +10,7 @@ def exponentiate(a,b):
     
     if b ==0:
         return 1
-    else:
-        return(a * exponentiate(a, b-1))
+    return a * exponentiate(a, b-1)
 print(exponentiate(int (input("Введите число возводимое в степень")),int (input("Введите степень в которую возводим"))))
 
 
