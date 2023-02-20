@@ -7,13 +7,10 @@
 2
 """
 
-def sum_number (a,b):
+def sum_number(a,b):
     if a < b:
         a,b=b,a
     if b!=0:
-        a+=1
-        b-=1
-        return sum_number(a,b)
-    else:
-        return a
+        return sum_number(a+1,b-1)
+    return a
 print(sum_number(int(input("Введите первое число")),int(input("Введите второе число"))))

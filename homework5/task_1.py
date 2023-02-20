@@ -6,14 +6,11 @@ A = 3; B = 5 -> 243 (3**5)
 A = 2; B = 3 -> 8
 """
 
-def exponentiate (a,b, resalt = 1):
+def exponentiate(a,b):
     
-    if b !=0:
-        resalt = resalt * a
-        b-=1
-        return exponentiate (a, b, resalt)
-    else:
-        return resalt
+    if b ==0:
+        return 1
+    return a * exponentiate(a, b-1)
 print(exponentiate(int (input("Введите число возводимое в степень")),int (input("Введите степень в которую возводим"))))
 
 
