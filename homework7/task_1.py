@@ -14,24 +14,44 @@
 Парам пам-пам
 """
 # poem = str(input("Введите стишок"'\n'))
-poem = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
+# poem = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
 # poem = list(poem.split())
-# list1=[]
-def vowels(poem):
-    poem = list(poem.split())
-    list1=[]
-    for i in poem:
-        list1.append(sum(1 for j in i if j in 'аеёиоуыэюя'))
-    if all(list1):
-        return "Парам пам-пам"
-    return "Пам парам"
-print (vowels(poem))
+# # list1=[]
+# def vowels(poem):
+#     poem = list(poem.split())
+#     list1=[]
+#     for i in poem:
+#         list1.append(sum(1 for j in i if j in 'аеёиоуыэюя'))
+#     if all(list1):
+#         return "Парам пам-пам"
+#     return "Пам парам"
+# print (vowels(poem))
 
-print (sum(1 for i in poem for j in i if j in 'аеёиоуыэюя')) # можно ли этой функцией как-то заполнятить список в одну строку, я просто не нашел форму записию. 
-# Просто тут складывает весь список, а не элементы.
+# print (sum(1 for i in poem for j in i if j in 'аеёиоуыэюя')) # можно ли этой функцией как-то заполнятить список в одну строку, я просто не нашел форму записию. 
+# # Просто тут складывает весь список, а не элементы.
 
 # print (list1.append for i in poem sum (1 for j in i if j in 'аеёиоуыэюя')) # как то так только чтоб работало
 
 # А как записать функцией высшего порядка я так и не понял , т.к лямбда что-то делат с каждым элементом
 # списка, а мне нужно результаты в новый список записывать и как через map(lambda) это все реализовать я не нашел 
 # если есть решение скиньте его я сам ознакомлюсь.
+
+
+
+def vowels2(poem):
+    poem = list(poem.split())
+# заполняем список в одну строку:
+    list1 = [sum(1 for j in p if j in 'аеёиоуыэюя') for p in poem]
+# превращаем в список/кортеж вида (True, True, True) или (True, True, False)
+    list1 =tuple(map(lambda x: True if x == list1[0] else False, list1))
+    print(list1)
+# можно и так:
+# list1 = list(map(lambda x: True if x == list1[0] else False, list1))
+    if all(list1):
+        return "Парам пам-пам"
+    return "Пам парам"
+
+poem1 = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
+print(vowels2(poem1))
+poem2 = 'пара-ра-рам рам-пам-папам па-дам'
+print(vowels2(poem2))
